@@ -12,10 +12,8 @@ int main()
 int isprime(int a)
 {
    int ans;
-   for(int i=2; i*i<=a; i++)
-   {
-    if(a%i==0)
-    {
+   for(int i=2; i*i<=a; i++){
+    if(a%i==0){
         return false;
     }
     else
