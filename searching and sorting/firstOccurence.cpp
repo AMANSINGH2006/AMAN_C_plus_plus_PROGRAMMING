@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int firstOccurence(int nums[],int target,int size){
+void firstOccurence(int nums[],int target,int size,int &ans){
     int start = 0;
     int end = size-1;
     int mid = (start + end)/2;
@@ -11,13 +11,13 @@ int firstOccurence(int nums[],int target,int size){
                 end = mid-1;
             }
             else{
-                return mid;
+                ans = mid;
             }
         }
         mid = start+(end-start)/2;
     }
 }
-int lastOccurence(int nums[],int target,int size){
+void lastOccurence(int nums[],int &target,int size,int &ans){
     int start = 0;
     int end = size-1;
     int mid = (start + end)/2;
@@ -27,7 +27,7 @@ int lastOccurence(int nums[],int target,int size){
                 start = mid+1;
             }
             else{
-                return mid;
+                ans = mid;
             }
         }
         mid = (start + end)/2;
@@ -44,8 +44,9 @@ int main(){
     for (int i = 0; i < size; i++){
         cin>>nums[i];
     }
-    int ans = firstOccurence(nums,target,size);
-    cout<<"The first occurence of Element "<<target<<" is "<<ans<<endl;
-    int second = lastOccurence(nums,target,size);
-    cout<<"The last occurence of Element "<<target<<" is "<<second;
+    int ans = -1;
+    firstOccurence(nums,target,size,ans);
+    cout<<"The first occurence of Element is at index : "<<ans<<endl;
+    lastOccurence(nums,target,size,ans);
+    cout<<"The last occurence of Element is at index : "<<ans<<endl;
 }
