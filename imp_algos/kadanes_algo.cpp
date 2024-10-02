@@ -1,6 +1,7 @@
 #include<iostream>
 #include<limits.h>
 using namespace std;
+/********************* Maximum subarray sum *******************************************/
 void maximumSubArraySum(int* arr, int n){
     int currSum = 0;
     int maxSum = INT_MIN;
