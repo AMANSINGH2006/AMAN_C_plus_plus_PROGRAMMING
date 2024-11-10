@@ -13,7 +13,7 @@ void findSubsequence(string str, int index, vector<string>&ans, string output){
     findSubsequence(str,index+1,ans,output);
 }
 int main(){
-    string str = "xyz";
+    string str = "abc";
     vector<string>ans;
     string output = "";
     int index = 0;
