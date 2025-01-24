@@ -26,6 +26,10 @@ public:
         return temp;
     }
 
+    bool operator==(const complex &B){
+       return (this->real == B.real) && (this->imag == B.imag);
+    }
+
     void print(){
         printf("[%d + i%d]\n",this->real, this->imag);
     }
@@ -43,5 +47,8 @@ int main(){
 
     complex D = A - B;
     D.print();
+
+    bool a = A == B;
+    cout<<a<<endl;
     return 0;
 }
